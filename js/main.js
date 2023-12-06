@@ -41,9 +41,9 @@ var quotes = [
 var box = "";
 var preIndex;
 function newQuote(){
-    var currentIndex = Math.floor(Math.random() * 6);
+    var currentIndex = Math.floor(Math.random() * quotes.length);
     for(;currentIndex == preIndex;){
-        currentIndex = Math.floor(Math.random() * 6);
+        currentIndex = Math.floor(Math.random() * quotes.length);
     }
     box = `<p class="p-quote">
                 "${quotes[currentIndex].quote}"
@@ -51,4 +51,5 @@ function newQuote(){
             <p>${quotes[currentIndex].auther}</p>` ;
     preIndex = currentIndex;
     document.getElementById('quote').innerHTML = box; 
+    console.log(quotes.length);
 }
